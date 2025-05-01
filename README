@@ -1,0 +1,170 @@
+# TODOS MASTER
+
+TODOS MASTER is a full-stack task management application built with React, Redux, TypeScript, and Vite on the client side, and Node.js with Express on the server side. This application allows users to manage their tasks, update profiles, and perform CRUD operations on todos.
+
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup Instructions](#setup-instructions)
+- [Folder Structure](#folder-structure)
+- [Scripts](#scripts)
+- [Dependencies](#dependencies)
+- [Development Notes](#development-notes)
+
+---
+
+## Features
+
+- User authentication (register, login, logout).
+- Profile management (update profile, change password).
+- Task management (add, edit, delete, toggle status).
+- Search, filter, and sort todos.
+- Responsive design with Material-UI.
+- State management with Redux Toolkit.
+
+---
+
+## Technologies Used
+
+### Client
+- **React**: Frontend library for building user interfaces.
+- **Redux Toolkit**: State management.
+- **TypeScript**: Type-safe JavaScript.
+- **Vite**: Fast development server and build tool.
+- **Material-UI**: UI components.
+- **Axios**: HTTP client for API requests.
+
+### Server
+- **Node.js**: Backend runtime.
+- **Express**: Web framework.
+- **MongoDB**: Database for storing user and task data.
+
+---
+
+## Setup Instructions
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+- MongoDB (running locally or on a cloud service)
+
+### Steps
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-repo/todos-master.git
+   cd todos-master
+   ```
+
+2. **Setup the Server**
+   - Navigate to the `server` directory:
+     ```bash
+     cd server
+     ```
+   - Install dependencies:
+     ```bash
+     npm install
+     ```
+   - Create a `.env` file in the `server` directory and add the following:
+     ```
+     PORT=3000
+     MONGO_URI=mongodb://localhost:27017/todos-master
+     JWT_SECRET=your-secret-key
+     ```
+   - Start the server:
+     ```bash
+     npm start
+     ```
+
+3. **Setup the Client**
+   - Navigate to the `client` directory:
+     ```bash
+     cd ../client
+     ```
+   - Install dependencies:
+     ```bash
+     npm install
+     ```
+   - Start the development server:
+     ```bash
+     npm run dev
+     ```
+   - Open the app in your browser at `http://localhost:5173`.
+
+---
+
+## Folder Structure
+
+```
+todos-master/
+├── client/
+│   ├── public/              # Static assets
+│   ├── src/                 # Source code
+│   │   ├── components/      # Reusable components
+│   │   ├── pages/           # Page components
+│   │   ├── redux/           # Redux slices and store
+│   │   ├── assets/          # Images and other assets
+│   │   ├── App.tsx          # Main app component
+│   │   ├── main.tsx         # Entry point
+│   ├── package.json         # Client dependencies and scripts
+│   ├── vite.config.ts       # Vite configuration
+│   ├── tsconfig.json        # TypeScript configuration
+│   └── README.md            # Client README
+├── server/
+│   ├── config/              # Configuration files
+│   ├── controllers/         # API controllers
+│   ├── middleware/          # Middleware functions
+│   ├── models/              # Database models
+│   ├── routes/              # API routes
+│   ├── utils/               # Utility functions
+│   ├── server.js            # Entry point for the server
+│   ├── package.json         # Server dependencies and scripts
+│   └── README.md            # Server README
+└── README.md                # Project README
+```
+
+---
+
+## Scripts
+
+### Client
+- `npm run dev`: Start the development server.
+- `npm run build`: Build the client for production.
+- `npm run lint`: Run ESLint to check for code issues.
+- `npm run preview`: Preview the production build.
+
+### Server
+- `npm start`: Start the server.
+
+---
+
+## Dependencies
+
+### Client
+- **Core**: `react`, `react-dom`, `react-router-dom`, `@reduxjs/toolkit`, `react-redux`
+- **UI**: `@mui/material`, `@mui/icons-material`, `@mui/lab`
+- **HTTP**: `axios`
+- **Validation**: `yup`, `@hookform/resolvers`, `react-hook-form`
+- **Date Handling**: `date-fns`, `@mui/x-date-pickers`
+- **Build Tools**: `vite`, `typescript`
+
+### Server
+- **Core**: `express`, `mongoose`, `dotenv`
+- **Authentication**: `jsonwebtoken`, `bcryptjs`
+- **Validation**: `express-validator`
+
+---
+
+## Development Notes
+
+- **Environment Variables**: Ensure `.env` files are properly configured for both client and server.
+- **Redux State**: The application uses Redux Toolkit for state management. Slices are located in `client/src/redux/features/`.
+- **API Endpoints**: The server exposes RESTful APIs for authentication, user management, and todos. Update the `api` variable in Redux slices if the server URL changes.
+- **Styling**: The project uses Material-UI for styling and TailwindCSS for global styles.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
